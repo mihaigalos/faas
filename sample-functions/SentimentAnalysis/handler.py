@@ -3,8 +3,10 @@ import json
 from textblob import TextBlob
 
 # Set encoding to UTF-8 (vs ASCII to eliminate potential errors).
-reload(sys)
-sys.setdefaultencoding('utf8')
+
+if sys.version[0] == '2':
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
 
 def get_stdin():
     buf = ""
